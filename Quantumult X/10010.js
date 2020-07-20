@@ -23,16 +23,6 @@ let VAL_findlotteryheader = chavy.getdata(KEY_findlotteryheader)
     chavy.log(`🔔 ${cookieName}`)
     await loginapp()
     await signapp()
-    if (VAL_loginlotteryurl && VAL_findlotteryurl)
-    if (signinfo.encryptmobile) {
-        await findlottery()
-        if (signinfo.findlottery && signinfo.findlottery.acFrequency && signinfo.findlottery.acFrequency.usableAcFreq) {
-            for (let i = 0; i < signinfo.findlottery.acFrequency.usableAcFreq; i++) {
-                await lottery()
-            }
-        }
-    }
-    await getinfo()
     showmsg()
     chavy.done()
 })().catch((e) => chavy.log(`❌ ${cookieName} 签到失败: ${e}`), chavy.done())
