@@ -233,18 +233,18 @@ if(data.items[i].items[k].nameType == 331101){
  }
 }
     if (totalCommon) {
-        var flow = "流量 已用:" + usagedCommon + "剩余:" + balanceCommon + "总量:" + totalCommon
+        var flow = "【流量】已用:" + usagedCommon + "剩余:" + balanceCommon + "总量:" + totalCommon
         var message = flow
     }
     if (voiceAmount) {
-        var voice = "通话 已用:" + voiceUsage + "分钟 剩余:" + voiceBalance + "分钟 总量:" + voiceAmount + "分钟"
+        var voice = "【通话】已用:" + voiceUsage + "分钟 剩余:" + voiceBalance + "分钟 总量:" + voiceAmount + "分钟"
         message = message + "\n" + voice
     }
     if (msgAmount) {
-        var msginfo = "短信 已用:" + msgUsage + "条 剩余:" + msgBalance + "条 总量:" + msgAmount + "条"
+        var msginfo = "【短信】已用:" + msgUsage + "条 剩余:" + msgBalance + "条 总量:" + msgAmount + "条"
         message = message + "\n" + msginfo
     }
-    var fee = "套餐 " + productname +  " 余额:" + (balance / 100).toFixed(2) + "元"
+    var fee = "【套餐】" + productname +  " 账户余额:" + (balance / 100).toFixed(2) + "元"
     message = message + "\n" + fee
 
     if (bldata != '无'){message +=  `  ${m}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
