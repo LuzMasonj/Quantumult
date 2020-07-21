@@ -239,7 +239,7 @@ if(data.items[i].items[k].nameType == 331101){
         message = message + "\n" + msginfo
     }
     if (totalCommon) {
-        var flow = "【流量】已用: " + usagedCommon + "剩余:" + balanceCommon + "合计:" + totalCommon
+        var flow = "【流量】已用:" + usagedCommon + "剩余:" + balanceCommon + "合计:" + totalCommon
         message = message + "\n" + flow
     }
    
