@@ -178,6 +178,9 @@ function parseData(detail, balance, info, bill) {
 }
 
 function notify(data, balance, exdata, bldata) {
+$tool.log.info(data)
+$tool.log.info(balance)
+$tool.log.info(exdata)
 $tool.log.info(bldata)
     var subtitle = ""
     if (config.info) {
@@ -230,7 +233,7 @@ if(data.items[i].items[k].nameType == 331101){
  }
 }
     if (totalCommon) {
-        var flow = "【流量】已用: " + usagedCommon + "  剩余:" + balanceCommon + "  合计:" + totalCommon
+        var flow = "【流量】已用:" + usagedCommon + "剩余:" + balanceCommon + "合计:" + totalCommon
         var message = flow
     }
     if (voiceAmount) {
@@ -244,15 +247,15 @@ if(data.items[i].items[k].nameType == 331101){
 	var fee = "【套餐】" + productname +  " 话费剩余: " + (balance / 100).toFixed(2) + "元"
 	message = message + "\n" + fee
 
-//    if (bldata != '无'){message +=  `  ${m}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
-//    if (bldata == '无'){
-//message = message + "\n" + `【${m}月账单】   `+ bldata
-//} else if (typeof bldata.items[0].acctName != "undefined" && bldata.serviceResultCode == 0) {
-//    bills = `【${m}月话费账单】` + "\n   " + bldata.items[0].items[1].chargetypeName + ':    '+
-//bldata.items[0].items[1].charge/100+'元'+ "\n   "+ bldata.items[0].items[2].chargetypeName + ':  '+
-//bldata.items[0].items[2].charge/100+'元'+ "\n   "+ bldata.items[0].items[0].chargetypeName + '合计:  '+ bldata.items[0].items[0].charge/100+'元'
-//    message = message + "\n" + bills
-//    }
+    if (bldata != '无'){message +=  `  ${m}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
+    if (bldata == '无'){
+	//message = message + "\n" + `【${m}月账单】   `+ bldata
+} else if (typeof bldata.items[0].acctName != "undefined" && bldata.serviceResultCode == 0) {
+    bills = `【${m}月话费账单】` + "\n   " + bldata.items[0].items[1].chargetypeName + ':    '+
+bldata.items[0].items[1].charge/100+'元'+ "\n   "+ bldata.items[0].items[2].chargetypeName + ':  '+
+bldata.items[0].items[2].charge/100+'元'+ "\n   "+ bldata.items[0].items[0].chargetypeName + '合计:  '+ bldata.items[0].items[0].charge/100+'元'
+    message = message + "\n" + bills
+    }
 
     $tool.notify(config.name, subtitle, message)
     $tool.log.info(config.name + "\n" + subtitle + "\n" + message)
