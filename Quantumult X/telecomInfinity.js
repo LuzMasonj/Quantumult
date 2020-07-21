@@ -237,14 +237,14 @@ if(data.items[i].items[k].nameType == 331101){
         var message = flow
     }
     if (voiceAmount) {
-        var voice = "【通话】已用: " + voiceUsage + "分钟 剩余: " + voiceBalance + "分钟 合计: " + voiceAmount + "分钟"
+        var voice = "【通话】已用:" + voiceUsage + "分钟 剩余:" + voiceBalance + "分钟 合计: " + voiceAmount + "分钟"
         message = message + "\n" + voice
     }
     if (msgAmount) {
-        var msginfo = "【短信】已用: " + msgUsage + "条 剩余: " + msgBalance + "条 合计: " + msgAmount + "条"
+        var msginfo = "【短信】已用:" + msgUsage + "条 剩余:" + msgBalance + "条 合计:" + msgAmount + "条"
         message = message + "\n" + msginfo
     }
-	var fee = "【套餐】" + productname +  " 话费剩余: " + (balance / 100).toFixed(2) + "元"
+	var fee = "【套餐】" + productname +  " 话费剩余:" + (balance / 100).toFixed(2) + "元"
 	message = message + "\n" + fee
 
     if (bldata != '无'){message +=  `  ${m}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
