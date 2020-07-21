@@ -237,7 +237,7 @@ if(data.items[i].items[k].nameType == 331101){
         var message = flow
     }
     if (voiceAmount) {
-        var voice = "【通话】已用:" + voiceUsage + "分钟 剩余:" + voiceBalance + "分钟 合计: " + voiceAmount + "分钟"
+        var voice = "【通话】已用:" + voiceUsage + "分钟 剩余:" + voiceBalance + "分钟 合计:" + voiceAmount + "分钟"
         message = message + "\n" + voice
     }
     if (msgAmount) {
