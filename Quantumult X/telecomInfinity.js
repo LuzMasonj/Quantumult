@@ -184,7 +184,7 @@ $tool.log.info(exdata)
 $tool.log.info(bldata)
     var subtitle = ""
     if (config.info) {
-        subtitle = "【手机】" + exdata.mobile + "  (" + exdata.province + "-" + exdata.city + ")"
+        subtitle = "【余额】" + (balance / 100).toFixed(2) + "元" 
     }
     var productname = "中国电信"
     if (typeof data.items[3].offerType == 19) {
@@ -244,7 +244,7 @@ if(data.items[i].items[k].nameType == 331101){
         var msginfo = "【短信】" + msgUsage + "条/" + msgAmount + "条 剩余:" + msgBalance + "条" 
         message = message + "\n" + msginfo
     }
-    var fee = "【套餐】" + productname +  " 账户余额:" + (balance / 100).toFixed(2) + "元"
+    var fee = "【套餐】" + productname + " " + exdata.mobile + "  (" + exdata.province + "-" + exdata.city + ")"
     message = message + "\n" + fee
 
     if (bldata != '无'){message +=  `  ${m}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
