@@ -19,7 +19,7 @@ function get_basic(tel) {
         remainFlow = obj.dataList[1].number;
         remainTime = obj.dataList[2].number;
         queryTime = obj.flush_date_time;
-        $notify("中国联通10010 截止至 " + queryTime, "剩余语音 " + remainTime + "分" + "\n已用流量 " + remainFlow + "GB" + "\n话费余额 " + remainFee + "元");
+        $notify("中国联通10010", "截止至 " + queryTime, "剩余语音 " + remainTime + "分" + "已用流量 " + remainFlow + "GB" + "\n话费余额 " + remainFee + "元");
     }, reason => {
     $notify("10010", tel + '登录失败', reason.error);
     });
