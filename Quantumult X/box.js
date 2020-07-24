@@ -1,5 +1,5 @@
 const $ = new Env('BoxJs')
-$.domain = '119.28.28.28'
+$.domain = 'www.sougou.com'
 
 $.version = '0.5.8'
 $.versionType = 'beta'
