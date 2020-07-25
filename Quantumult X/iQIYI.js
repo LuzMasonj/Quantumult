@@ -113,7 +113,8 @@ function Checkin() {
 function Lottery() {
   return new Promise(resolve => {
     var URL = {
-      url: 'https://iface2.iqiyi.com/aggregate/3.0/lottery_activity?&lottery_chance=1&app_k=456ddd1ff52a6089c7e3f806d609520d&app_v=11.6.5&app_gv=&app_t=0&platform_id=10&dev_os=10&dev_ua=Redmi+K20+Pro&net_sts=1&qyid=dfc51460c2551c7df8702b70324828b11104&psp_uid=000000&&psp_cki=' + $nobyda.read("CookieQY") + '&psp_status=1&secure_v=1&secure_p=GPhone&cupid_v=3.47.008&core=1&req_sn=1595627019676'
+      url: 'https://iface2.iqiyi.com/aggregate/3.0/lottery_activity?&lottery_num=1&&app_k=456ddd1ff52a6089c7e3f806d609520d&app_v=11.6.5&app_gv=&app_t=0&platform_id=10&dev_os=10&dev_ua=Redmi+K20+Pro&net_sts=1&qyid=dfc51460c2551c7df8702b70324828b11104&psp_uid=000000&&psp_cki=' + $nobyda.read("CookieQY") + '&psp_status=1&secure_v=1&secure_p=GPhone&cupid_v=3.47.008&core=1&req_sn=1595627019676
+'
     }
     $nobyda.get(URL, function(error, response, data) {
       if (error) {
