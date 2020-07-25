@@ -64,7 +64,7 @@ if ($nobyda.isRequest) {
 
 function login() {
   var URL = {
-    url: 'https://cards.iqiyi.com/views_category/3.0/vip_home?secure_p=iPhone&scrn_scale=0&dev_os=0&ouid=0&layout_v=6&psp_cki=' + $nobyda.read("CookieQY") + '&page_st=suggest&app_k=8e48946f144759d86a50075555fd5862&dev_ua=iPhone8%2C2&net_sts=1&cupid_uid=0&xas=1&init_type=6&app_v=11.4.5&idfa=0&app_t=0&platform_id=0&layout_name=0&req_sn=0&api_v=0&psp_status=0&psp_uid=451953037415627&qyid=0&secure_v=0&req_times=0',
+    url: 'https://iface2.iqiyi.com/aggregate/3.0/lottery_activity?&lottery_num=1&&app_k=8e48946f144759d86a50075555fd5862&app_v=11.6.5&app_gv=&app_t=0&platform_id=0&dev_os=0&dev_ua=iPhone8%2C2&net_sts=0&qyid=0&psp_uid=0&&psp_cki=替换到这里&psp_status=0&secure_v=0&secure_p=0&cupid_v=3.47.008&core=1&req_sn=0',
     headers: {
       sign: '7fd8aadd90f4cfc99a858a4b087bcc3a',
       t: '479112291'
