@@ -1,19 +1,5 @@
 /**
- * 名称：zhihu.js
- * 地址：
- *
- ******** 以下为 tamperJS 自动生成的 rewrite 相关信息，可能需要根据情况适当调整 ********
-
-[rewrite]
-
-
-[mitm]
-
-
- ********
- * 工具: tamperJS BY @elecV2
- * 频道: https://t.me/elecV2
- *
+不用打开app就能看知乎回答、看评论。
 **/
 
 let body = $response.body
