@@ -1,5 +1,5 @@
 $.KEY_mobile = 'mobile_10010'
-var tel = $.KEY_mobile;
+const tel = $.KEY_mobile
 //上行引号内填入联通号码，使用前请登陆一次联通支付宝小程序
 //有问题请通过Telegram反馈 https://t.me/Leped_Bot
 var remainTime = "-";
