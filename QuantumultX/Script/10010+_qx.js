@@ -1,4 +1,3 @@
-//var tel = "15005485866";
 $.KEY_mobile = 'mobile_10010'
 var tel = $.KEY_mobile;
 //上行引号内填入联通号码，使用前请登陆一次联通支付宝小程序
