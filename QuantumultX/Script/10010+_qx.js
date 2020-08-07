@@ -1,5 +1,5 @@
-$.KEY_mobile = 'mobile_10010'
-const tel = $.KEY_mobile
+const KEY_mobile = 'mobile_10010'
+let VAL_mobile = KEY_mobile
 //上行引号内填入联通号码，使用前请登陆一次联通支付宝小程序
 //有问题请通过Telegram反馈 https://t.me/Leped_Bot
 var remainTime = "-";
@@ -10,7 +10,7 @@ var queryTime = "-";
 function get_basic(tel) {
     console.log("get_basic")
     let basicurl = {
-        url: "https://mina.10010.com/wxapplet/bind/getIndexData/alipay/alipaymini?user_id=" + tel,
+        url: "https://mina.10010.com/wxapplet/bind/getIndexData/alipay/alipaymini?user_id=" + VAL_mobile,
         headers: {},
     };
     $task.fetch(basicurl).then(response => {
