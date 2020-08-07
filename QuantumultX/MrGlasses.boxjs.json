@@ -6,8 +6,8 @@
   "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX",
   "apps": [
     {
-      "id": "10010",
-      "name": "10010",
+      "id": "100l0cx",
+      "name": "联通套餐查询",
       "keys": [],
       "settings": [{ "id": "mobile_10010", "name": "手机号码", "val": "", "type": "textarea", "placeholder": "18918920000,\n18918920000", "autoGrow": true, "rows": 5, "desc": "以英文逗号分隔多个号码, 可加回车" }],
       "author": "@MrGlasses",
