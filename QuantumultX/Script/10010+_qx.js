@@ -25,6 +25,6 @@ function get_basic(tel) {
     });
 }
 //$notify("中国联通10010", "截止至 " + queryTime, "剩余语音 " + remainTime + "分钟" + " 已用流量 " + remainFlow + "GB" + "\n话费余额 " + remainFee + "元");
-    }
+    
 
 get_basic(tel)
