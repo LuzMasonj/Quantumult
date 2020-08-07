@@ -80,7 +80,7 @@ function showmsg() {
     if (signinfo.signapp.signinMedal) {
         subTitle = `签到: 成功`
         detail = `积分: +${signinfo.signapp.prizeCount}, 成长值: +${signinfo.signapp.growthV}, 鲜花: +${signinfo.signapp.flowerCount}`
-    } else if (JSON.stringify(signinfo.signapp) == '{}') {
+    } else if (signinfo.signapp.msg == '用户今日已签到！') {
         subTitle = `签到: 重复`
     } else {
         subTitle = `签到: 失败`
