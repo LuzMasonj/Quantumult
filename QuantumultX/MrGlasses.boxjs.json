@@ -6,7 +6,7 @@
   "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX",
   "apps": [
     {
-      "id": "10010",
+      "id": "10010CheckIn",
       "name": "联通签到",
       "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signheader_10010"],
       "author": "@MrGlasses",
