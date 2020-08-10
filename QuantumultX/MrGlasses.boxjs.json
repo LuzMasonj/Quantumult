@@ -6,12 +6,20 @@
   "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX",
   "apps": [
     {
+      "id": "10010",
+      "name": "联通签到",
+      "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signheader_10010"],
+      "author": "@MrGlasses",
+      "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX/Script",
+      "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/10010.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10010.png", "https://raw.githubusercontent.com/Orz-3/task/master/10010.png"]
+    },
+    {
       "id": "ChinaUnicomEnquiry",
       "name": "联通套餐查询",
-      "keys": [],
-      "settings": [{ "id": "mobile_10010", "name": "手机号码", "val": "", "type": "textarea", "placeholder": "18918920000", "autoGrow": true, "rows": 5, "desc": "限1个联通手机号码" }],
+      "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signheader_10010"],
       "author": "@MrGlasses",
-      "repo": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/ChinaUnicomEnquiry.js",
+      "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX/Script",
       "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/ChinaUnicomEnquiry.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10010.png", "https://raw.githubusercontent.com/Orz-3/task/master/10010.png"]
     },
