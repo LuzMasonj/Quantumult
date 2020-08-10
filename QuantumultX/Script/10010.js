@@ -61,17 +61,6 @@ function signapp() {
     })
 }
 
-function gettel() {
-    const reqheaders = JSON.parse(VAL_signheader)
-    const reqreferer = reqheaders.Referer
-    const reqCookie = reqheaders.Cookie
-    let tel = ''
-    if (reqreferer.indexOf(`desmobile=`) >= 0) tel = reqreferer.match(/desmobile=(.*?)(&|$)/)[1]
-    if (tel == '' && reqCookie.indexOf(`u_account=`) >= 0) tel = reqCookie.match(/u_account=(.*?);/)[1]
-    return tel
-}
-
-
 function showmsg() {
     let subTitle = ''
     let detail = ''
