@@ -75,7 +75,8 @@ function showmsg() {
         const credit = signinfo.info.data.dataList[3]
         const back = signinfo.info.data.dataList[4]
         const money = signinfo.info.data.dataList[5]
-        detail = `${traffic.remainTitle}: ${traffic.number}${traffic.unit}, ${flow.remainTitle}: ${flow.number}${flow.unit}, ${voice.remainTitle}: ${voice.number}${voice.unit}, ${credit.remainTitle}: ${credit.number}${credit.unit}, ${back.remainTitle}: ${back.number}${back.unit}, ${money.remainTitle}: ${money.number}${money.unit}`
+        subTitle = `${voice.remainTitle}: ${voice.number}${voice.unit}`
+        detail = `${traffic.remainTitle}: ${traffic.number}${traffic.unit}, ${flow.remainTitle}: ${flow.number}${flow.unit}, ${credit.remainTitle}: ${credit.number}${credit.unit}`
     } 
     chavy.msg(cookieName, subTitle, detail)
 }
