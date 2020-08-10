@@ -4,20 +4,12 @@ const KEY_loginurl = 'chavy_tokenurl_10010'
 const KEY_loginheader = 'chavy_tokenheader_10010'
 const KEY_signurl = 'chavy_signurl_10010'
 const KEY_signheader = 'chavy_signheader_10010'
-const KEY_loginlotteryurl = 'chavy_loginlotteryurl_10010'
-const KEY_loginlotteryheader = 'chavy_loginlotteryheader_10010'
-const KEY_findlotteryurl = 'chavy_findlotteryurl_10010'
-const KEY_findlotteryheader = 'chavy_findlotteryheader_10010'
 
 const signinfo = {}
 let VAL_loginurl = chavy.getdata(KEY_loginurl)
 let VAL_loginheader = chavy.getdata(KEY_loginheader)
 let VAL_signurl = chavy.getdata(KEY_signurl)
 let VAL_signheader = chavy.getdata(KEY_signheader)
-let VAL_loginlotteryurl = chavy.getdata(KEY_loginlotteryurl)
-let VAL_loginlotteryheader = chavy.getdata(KEY_loginlotteryheader)
-let VAL_findlotteryurl = chavy.getdata(KEY_findlotteryurl)
-let VAL_findlotteryheader = chavy.getdata(KEY_findlotteryheader)
 
 ;(sign = async () => {
     chavy.log(`🔔 ${cookieName}`)
