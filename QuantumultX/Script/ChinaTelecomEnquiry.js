@@ -178,10 +178,10 @@ function parseData(detail, balance, info, bill) {
 }
 
 function notify(data, balance, exdata, bldata) {
-$tool.log.info(data)
-$tool.log.info(balance)
-$tool.log.info(exdata)
-$tool.log.info(bldata)
+//$tool.log.info(data)
+//$tool.log.info(balance)
+//$tool.log.info(exdata)
+//$tool.log.info(bldata)
     var subtitle = ""
     if (config.info) {
         subtitle = "【余额】" + (balance / 100).toFixed(2) + "元" 
