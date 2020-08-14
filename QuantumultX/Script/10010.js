@@ -56,15 +56,15 @@ function signapp() {
 function showmsg() {
     let subTitle = ''
     let detail = ''
-
+    console.log(signinfo)
     // 签到结果
-    if (signinfo.signapp.msg == 'ok!') {
-        subTitle = `签到: 成功`
+    if (signinfo.signapp.status == '0000') {
+        subTitle = `签到: 成功 `
         detail = `积分: +${signinfo.signapp.data.prizeCount}, 成长值: +${signinfo.signapp.data.growthV}, 鲜花: +${signinfo.signapp.data.flowerCount}`
-    } else if (signinfo.signapp.msg == '用户今日已签到！') {
-        subTitle = `签到: 重复`
+    } else if (signinfo.signapp.status == '0002') {
+        subTitle = `签到: 重复 `
     } else {
-        subTitle = `签到: 失败`
+        subTitle = `签到: 失败 `
         chavy.log(`❌ ${cookieName} signapp - response: ${JSON.stringify(signinfo.signapp)}`)
     }
 
