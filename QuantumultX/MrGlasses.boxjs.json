@@ -31,6 +31,60 @@
       "repo": "https://gitee.com/Sunert/Scripts/blob/master/Task/telecomInfinity.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/telecominfinty.png", "https://raw.githubusercontent.com/Orz-3/task/master/telecominfinty.png"],
       "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/ChinaTelecomEnquiry.js"
+    } ,
+    {
+      "id": "jd2_plantBean",
+      "name": "京东种豆2",
+      "keys": [
+        "jd2_plant_bean_name",
+        "jd2_plantBean1",
+        "jd2_plantBean2",
+        "jd2_plantBean3"
+      ],
+      "settings": [
+        {
+          "id": "jdPlantBeanNotify",
+          "name": "静默运行",
+          "val": false,
+          "type": "boolean",
+          "desc": "运行种豆脚本时不发出系统通知"
+        },
+        {
+          "id": "jd2_plant_bean_name",
+          "name": "京东账号昵称",
+          "val": "",
+          "type": "text",
+          "desc": "京东账号昵称,用于区分自己的京东账号(非必填，建议多个京东账号使用)"
+        },
+        {
+          "id": "jd2_plantBean1",
+          "name": "互助码1",
+          "val": "",
+          "type": "text",
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
+        },
+        {
+          "id": "jd2_plantBean2",
+          "name": "互助码2",
+          "val": "",
+          "type": "text",
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
+        },
+        {
+          "id": "jd2_plantBean3",
+          "name": "互助码3",
+          "val": "",
+          "type": "text",
+          "desc": "种豆得豆互助码.这是别人的助力码,你帮别人助力."
+        }
+      ],
+      "author": "@uniqueque",
+      "repo": "https://github.com/lxk0301/scripts",
+      "script": "https://raw.githubusercontent.com/lxk0301/scripts/master/jd_plantBean.js",
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/jdzd_mini.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/jdzd.png"
+      ]
     }
   ]
 }
