@@ -188,12 +188,6 @@ function notify(data, balance, exdata, bldata) {
         subtitle = "【余额】" + (balance / 100).toFixed(2) + "元"
     }
     var productname = "中国电信"
-    if (typeof data.items[3].offerType == 19) {
-        productname = data.items[3].productOFFName
-    }
-    else if (typeof data.items[3].productOFFName != "undefined") {
-        productname = data.items[3].productOFFName
-    }
     var voiceAmount = " "
     var voiceUsage = " "
     var voiceBalance = " "
