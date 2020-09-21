@@ -1,5 +1,7 @@
 [![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=MisterGlasses&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
+仅供自用
+
 ### 免责声明
 
 1. 此项目仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
