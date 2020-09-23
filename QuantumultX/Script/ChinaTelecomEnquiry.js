@@ -155,7 +155,7 @@ resolve(JSON.parse(body));
 }
 
 function parseData(detail, balance, info, bill) {
-    return new Promise(resolve => {
+    return new Promise(async(resolve) => {
         if (!info || !detail  || !balance|| !bill) {
             resolve("done")
             return
@@ -175,17 +175,15 @@ function parseData(detail, balance, info, bill) {
             resolve("done")
             //return
         }
-        var balanceAvailable = Number(balance.totalBalanceAvailable)
-        notify(detail, balanceAvailable, info, bill)
+        await notify(detail, balance, info, bill)
         resolve("done")
     })
 }
 
 function notify(data, balance, exdata, bldata) {
-//console.log(bldata)
     var subtitle = ""
     if (config.info) {
-        subtitle = "【余额】" + (balance / 100).toFixed(2) + "元"
+        subtitle = "【余额】" + (Number(balance.totalBalanceAvailable)/100).toFixed(2) + "元"
     }
     var productname = "中国电信"
     var voiceAmount = " "
@@ -207,18 +205,17 @@ function notify(data, balance, exdata, bldata) {
      totalCommon = formatFlow(data.totalCommon/1024)
 }
 for (i=0;i<data.items.length;i++){
-for (k=0;k<data.items[i].items.length;k++){
+ for (k=0;k<data.items[i].items.length;k++){
 if(data.items[i].items[k].nameType == 131100){
    voiceUsage = data.items[i].items[k].usageAmount
    voiceBalance = data.items[i].items[k].balanceAmount
    voiceAmount = data.items[i].items[k].ratableAmount
-  }
-//$.log.info(data.items[i].items[k].nameType)
+  };
 if(data.items[i].items[k].nameType == 401100||data.items[i].items[k].nameType == 431100){
    msgUsage = data.items[i].items[k].usageAmount
    msgBalance = data.items[i].items[k].balanceAmount
    msgAmount = data.items[i].items[k].ratableAmount
-  }
+  };
 if(data.items[i].items[k].nameType == 331101){
    productname = data.items[i].productOFFName
    usagedCommon = formatFlow(data.items[i].items[k].usageAmount/1024)
@@ -239,18 +236,13 @@ if(data.items[i].items[k].nameType == 331101){
         var msginfo = "【短信】" + msgUsage + "条/" + msgAmount + "条 剩余:" + msgBalance + "条" 
         message = message + "\n" + msginfo
     }
-    var fee = "【套餐】" + productname + " " + exdata.mobile + "  (" + exdata.province + "-" + exdata.city + ")"
+    const fee = "【套餐】" + productname + " " + exdata.mobile + "  (" + exdata.province + "-" + exdata.city + ")"
     message = message + "\n" + fee
 
-    if (bldata != '无'){message +=  `  ${M}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
+    if (bldata != '无'){message +="\n" + "【账单】" +  `${M}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
     if (bldata == '无'){
 	//message = message + "\n" + `【${M}月账单】   `+ bldata
-} else if (typeof bldata.items[0].acctName != "undefined" && bldata.serviceResultCode == 0) {
-    bills = `【${M}月话费账单】` + "\n   " + bldata.items[0].items[1].chargetypeName + ':    '+
-bldata.items[0].items[1].charge/100+'元'+ "\n   "+ bldata.items[0].items[2].chargetypeName + ':  '+
-bldata.items[0].items[2].charge/100+'元'+ "\n   "+ bldata.items[0].items[0].chargetypeName + '合计:  '+ bldata.items[0].items[0].charge/100+'元'
-    message = message + "\n" + bills
-    }
+} 
     $.msg(config.name, subtitle, message)
 }
 
