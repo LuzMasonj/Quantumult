@@ -1,4 +1,5 @@
-/* Quantumult X 脚本: 闪电下载vip❤凉意  下载链接🔗 http://bbs.flashdown365.com/download.html
+/* Quantumult X 脚本: 闪电下载vip
+ http://bbs.flashdown365.com/download.html
 
 [rewrite_local] 
 #闪电下载vip
