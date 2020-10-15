@@ -41,10 +41,10 @@ let config = {
     delay: 0, //自定义延迟签到,单位毫秒,(如填200则每个接口延迟0.2秒执行),默认无延迟
     info: 1, //是否显示手机归属地，1为显示，0为不显示
 }
-const $ = new Env(config.name)
-     d = new Date();
-     Y = d.getFullYear(),
-     M = $.getdata('Mon').slice(-2)||d.getMonth()  //上月
+let $ = new Env(config.name),
+     Y = $.time('yyyy'),
+     M = $.getdata('Mon').slice(-2)||$.time('MM') ; //查询前几个月，可以')'号后减几
+
    let AUTHTOKEN = $.getdata(config.authTokenKey)
    let COOKIE = $.getdata(config.CookieKey)
 var requests = {
@@ -82,7 +82,6 @@ var requests = {
     }
 }
 
-//console.log(requests.bill)
 if (isGetCookie = typeof $request !== 'undefined') {
     GetCookie()
     $.done()
@@ -101,7 +100,7 @@ function GetCookie() {
         if (cookieVal) {
             if ($.setdata(cookieVal, config.authTokenKey)) {
                 $.msg(config.name, '获取authToken: 成功', '')
-              // $.log.info(`[${config.name}] 获取authToken: 成功, authToken: ${cookieVal}, Cookie: [${COOKIE}]` )
+              // console.log(`[${config.name}] 获取authToken: 成功, authToken: ${cookieVal}, Cookie: [${COOKIE}]` )
             }
         }
     }
@@ -181,20 +180,14 @@ function parseData(detail, balance, info, bill) {
 }
 
 function notify(data, balance, exdata, bldata) {
+//console.log(data.items)
+  try{
     var subtitle = ""
     if (config.info) {
         subtitle = "【余额】" + (Number(balance.totalBalanceAvailable)/100).toFixed(2) + "元"
     }
-    var productname = "中国电信"
-    var voiceAmount = " "
-    var voiceUsage = " "
-    var voiceBalance = " "
-    var msgUsage = ""
-    var msgBalance = ""
-    var msgAmount = ""
-	var usagedCommon = ""
-	var balanceCommon = ""
-	var totalCommon = ""
+    let productname = "中国电信", voiceAmount = " ", voiceUsage = " ", voiceBalance = " ", msgUsage = "", msgBalance = "", msgAmount = "",usagedCommon,balanceCommon,totalCommon;
+	
   if(data.usedCommon){
      usagedCommon = formatFlow(data.usedCommon/1024)
 }
@@ -203,47 +196,63 @@ function notify(data, balance, exdata, bldata) {
 }
   if(data.totalCommon){
      totalCommon = formatFlow(data.totalCommon/1024)
-}
+}  //流量信息
+
 for (i=0;i<data.items.length;i++){
  for (k=0;k<data.items[i].items.length;k++){
-if(data.items[i].items[k].nameType == 131100){
-   voiceUsage = data.items[i].items[k].usageAmount
-   voiceBalance = data.items[i].items[k].balanceAmount
+if(data.items[i].items[k].nameType == '131100'){
    voiceAmount = data.items[i].items[k].ratableAmount
-  };
-if(data.items[i].items[k].nameType == 401100||data.items[i].items[k].nameType == 431100){
+   voiceBalance = data.items[i].items[k].balanceAmount
+   voiceUsage = data.items[i].items[k].usageAmount
+  }; //语音余量
+if(data.items[i].items[k].nameType == '401100'||data.items[i].items[k].nameType == '431100'){
    msgUsage = data.items[i].items[k].usageAmount
-   msgBalance = data.items[i].items[k].balanceAmount
    msgAmount = data.items[i].items[k].ratableAmount
-  };
-if(data.items[i].items[k].nameType == 331101){
+   msgBalance = data.items[i].items[k].balanceAmount
+  }; //短信余量
+
+if (data.items[i].offerType == '11'|| data.items[i].offerType == '21') {
+        productname = data.items[i].productOFFName
+    }; //主套餐名称
+if(data.items[i].productOFFName == "畅享套餐"){
+   usagedCommon = formatFlow(data.items[i].items[k].usageAmount/1024)
+   balanceCommon = data.items[i].items[k].ratableResourcename
+   totalCommon = data.items[i].productOFFName
+    }; // 畅享套餐
+if(data.items[i].productOFFName == "爽卡"){
    productname = data.items[i].productOFFName
    usagedCommon = formatFlow(data.items[i].items[k].usageAmount/1024)
    balanceCommon = formatFlow(data.items[i].items[k].balanceAmount/1024)
    totalCommon = formatFlow(data.items[i].items[k].ratableAmount/1024)
+    }; // 爽卡套餐
   }
- }
 }
+	
     if (totalCommon) {
         var flow = "【流量】" + usagedCommon + "/" + totalCommon + " 剩余:" + balanceCommon
-        var message = flow
+        message = flow
     }
     if (voiceAmount) {
         var voice = "【通话】" + voiceUsage + "分钟/" + voiceAmount + "分钟 剩余:" + voiceBalance + "分钟"
-        message = message + "\n" + voice
+        message += "\n" + voice
     }
     if (msgAmount) {
         var msginfo = "【短信】" + msgUsage + "条/" + msgAmount + "条 剩余:" + msgBalance + "条" 
-        message = message + "\n" + msginfo
-    }
+        message += "\n" + msginfo
+    }; //以上为套餐用量
+	
     const fee = "【套餐】" + productname + " " + exdata.mobile + "  (" + exdata.province + "-" + exdata.city + ")"
-    message = message + "\n" + fee
+    message += "\n" + fee
 
     if (bldata != '无'){message +="\n" + "【账单】" +  `${M}月消费合计: `+ bldata.items[0].sumCharge/100+'元'}
     if (bldata == '无'){
-	//message = message + "\n" + `【${M}月账单】   `+ bldata
-} 
+	message = message + "\n" + `【${M}月账单】   `+ bldata
+}; //账单明细
     $.msg(config.name, subtitle, message)
+  }
+  catch(err){
+     console.log("查询错误，错误原因:"+ err+'\n账单响应数据:'+JSON.stringify(bldata)+'\n请将以上数据机主姓名删除后反馈给作者')
+  }
 }
 
 // MB 和 GB 自动转换
