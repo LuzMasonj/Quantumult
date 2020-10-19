@@ -21,7 +21,7 @@ $.KEY_signbody = 'chavy_signbody_10000'
   .finally(() => $.done())
 
 async function signapp() {
-  const phonedat = $.getdata($.KEY_mobile)
+  const phonedat = ''
   const phones = [undefined, null, 'null', ''].includes(phonedat) ? [] : phonedat.replace(/\n/, '').split(',')
   const signacts = []
   $.info = {
