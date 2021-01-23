@@ -8,6 +8,13 @@ let CookieJDs = [
 ]
 // 判断环境变量里面是否有京东ck
 if (process.env.JD_COOKIE) {
+  if ((process.env.JD_COOKIE.indexOf('MisterGlasses') == -1) && (process.env.JD_COOKIE.indexOf('jd_7b22bbfe1e7e5') == -1)) {
+    console.log(`请勿使用 github action 运行此脚本，无论你是从你自己的私库还是其他哪里拉取的源代码，都会导致我被封号 \n`);
+    !(async () => {
+      await require('./sendNotify').sendNotify(' 提醒', `请勿使用 github action、滥用 github 资源会封我仓库以及账号`)
+      await process.exit(0);
+    })()
+  }
   if (process.env.JD_COOKIE.indexOf('&') > -1) {
     console.log(`您的cookie选择的是用&隔开\n`)
     CookieJDs = process.env.JD_COOKIE.split('&');
