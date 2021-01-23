@@ -14,8 +14,7 @@ if (process.env.JD_COOKIE) {
       await require('./sendNotify').sendNotify(' 提醒', `请勿使用 github action、滥用 github 资源会封我仓库以及账号`)
       await process.exit(0);
     })()
-  }
-  if (process.env.JD_COOKIE.indexOf('&') > -1) {
+  } else if (process.env.JD_COOKIE.indexOf('&') > -1) {
     console.log(`您的cookie选择的是用&隔开\n`)
     CookieJDs = process.env.JD_COOKIE.split('&');
   } else if (process.env.JD_COOKIE.indexOf('\n') > -1) {
