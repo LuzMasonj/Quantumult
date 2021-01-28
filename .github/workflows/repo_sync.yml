@@ -1,0 +1,22 @@
+name: sync-scripts
+on:
+  schedule:
+    # Runs at 0,2,4,6...,22th hour every day (every 2 hours)
+    - cron:  '0 */3 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: sync-scripts
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the gitee repos to github.
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: gitee/lxk0301
+        dst: github/wangdetao8341
+        static_list: "jd_scripts"
+        dst_key: ${{ secrets.SYNC_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.SYNC_TOKEN }}
