@@ -1,6 +1,6 @@
 /**
  * @江湖中人
- * ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/weixinopentaobaourl.js
+ * ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/weixinopentaobaourl.js
  */
 
  // 在微信中点击淘宝链接，quanx会弹出通知，点击通知自动跳转到淘宝中打开(只测试了quanx)

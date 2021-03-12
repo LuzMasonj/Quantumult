@@ -3,15 +3,15 @@
   "name": "MrGlasses应用订阅",
   "author": "@MrGlasses",
   "icon": "https://avatars1.githubusercontent.com/u/27768847?s=400&u=d9e25b1f061d9b382a3b85a6d0b8deed00742da4&v=4",
-  "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX",
+  "repo": "https://github.com/LuzMasonj/Quantumult/tree/master/QuantumultX",
   "apps": [
     {
       "id": "10010CheckIn",
       "name": "联通签到",
       "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signheader_10010"],
       "author": "@MrGlasses",
-      "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX/Script",
-      "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/10010.js",
+      "repo": "https://github.com/LuzMasonj/Quantumult/tree/master/QuantumultX/Script",
+      "script": "https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/10010.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10010.png", "https://raw.githubusercontent.com/Orz-3/task/master/10010.png"]
     },
     {
@@ -19,8 +19,8 @@
       "name": "联通套餐查询",
       "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signheader_10010"],
       "author": "@MrGlasses",
-      "repo": "https://github.com/MisterGlasses/Quantumult/tree/master/QuantumultX/Script",
-      "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/ChinaUnicomEnquiry.js",
+      "repo": "https://github.com/LuzMasonj/Quantumult/tree/master/QuantumultX/Script",
+      "script": "https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/ChinaUnicomEnquiry.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10010.png", "https://raw.githubusercontent.com/Orz-3/task/master/10010.png"]
     },
     {
@@ -39,7 +39,7 @@
       "author": "@MrGlasses",
       "repo": "https://gitee.com/Sunert/Scripts/blob/master/Task/telecomInfinity.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/telecominfinty.png", "https://raw.githubusercontent.com/Orz-3/task/master/telecominfinty.png"],
-      "script": "https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/ChinaTelecomEnquiry.js"
+      "script": "https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/ChinaTelecomEnquiry.js"
     }
   ]
 }

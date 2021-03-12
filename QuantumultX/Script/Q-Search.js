@@ -1,8 +1,8 @@
 /*
 Quantumult X:
 [rewrite_local]
-^https:\/\/(www|m)\.baidu.com.*?(wd|word)=https?:\/\/.+$ url script-echo-response https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/Q-Search.js
-^https:\/\/(www|m)\.baidu.com.*?(wd|word)=.+\.(com|cn|net)$ url script-echo-response https://raw.githubusercontent.com/MisterGlasses/Quantumult/master/QuantumultX/Script/Q-Search.js
+^https:\/\/(www|m)\.baidu.com.*?(wd|word)=https?:\/\/.+$ url script-echo-response https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/Q-Search.js
+^https:\/\/(www|m)\.baidu.com.*?(wd|word)=.+\.(com|cn|net)$ url script-echo-response https://raw.githubusercontent.com/LuzMasonj/Quantumult/master/QuantumultX/Script/Q-Search.js
 
 [mitm]
 hostname = www.baidu.com, m.baidu.com
